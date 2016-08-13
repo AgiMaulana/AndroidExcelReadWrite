@@ -48,11 +48,12 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             Intent intent = new Intent(this, ReadExcelActivity.class);
             String path = Directory.getPath(this, data.getData());
             if(TextUtils.isEmpty(path)){
-                Toast.makeText(MainActivity.this, "Pilih file dengan ekstensi .xls", Toast.LENGTH_SHORT).show();
+                Toast.makeText(MainActivity.this, "File tidak ditemukan", Toast.LENGTH_SHORT).show();
                 return;
             }
 
-            String extension = path.substring(path.length()-3);
+            String filenameArray[] = path.split("\\.");
+            String extension = filenameArray[filenameArray.length-1];
             if(extension.equalsIgnoreCase("xls")){
                 intent.putExtra(ReadExcelActivity.FILE_PATH, path);
                 startActivity(intent);
