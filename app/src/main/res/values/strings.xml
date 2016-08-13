@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">ExcelReadWrite</string>
+    <string name="ekspor">Ekspor</string>
+    <string name="baca_file">Baca file Excel</string>
+</resources>
